@@ -15,21 +15,19 @@ export const DraggableObject = ({ id, path }) => {
   };
 
   return (
-    <div
-      ref={setNodeRef}
-      style={style}
-      {...attributes}
-      {...listeners}
-      className="rounded-lg flex flex-col"
-    >
-      <Image width={200} src={path} className="rounded" />
+    <div ref={setNodeRef} style={style} className="rounded-lg flex flex-col">
+      <Image preview width={200} src={path} className="rounded" />
       <div className="grid grid-cols-2">
-        <Button className="flex justify-center w-full bg-zinc-800">
-          <DragOutlined className="text-white" />
-        </Button>
-        <Button className="flex justify-center w-full bg-zinc-800">
-          <DeleteOutlined className="text-white" />
-        </Button>
+        <div {...attributes} {...listeners}>
+          <Button className="flex justify-center w-full bg-zinc-800">
+            <DragOutlined className="text-white" />
+          </Button>
+        </div>
+        <div>
+          <Button className="flex justify-center w-full bg-zinc-800">
+            <DeleteOutlined className="text-white" />
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import {
   useSensors,
 } from "@dnd-kit/core";
 import { useState } from "react";
-import Column from "./components/Column";
+import DraggableArea from "./components/DraggableArea";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 export default function App() {
@@ -17,6 +17,12 @@ export default function App() {
     { id: 2, path: "3f0fdcd43dc5ad25409f761fb9d15527-699x524.jpg" },
     { id: 3, path: "c01a73903e6fb1c52daba7641191d2ad-699x524.jpg" },
     { id: 4, path: "ee109a3b2bb2cef5b8c3efca324febc9-699x524.jpg" },
+    { id: 5, path: "0c958dd299ab8d089de0b534c4ac0785-699x524.jpg" },
+    { id: 6, path: "3f0fdcd43dc5ad25409f761fb9d15527-699x524.jpg" },
+    { id: 7, path: "c01a73903e6fb1c52daba7641191d2ad-699x524.jpg" },
+    { id: 8, path: "ee109a3b2bb2cef5b8c3efca324febc9-699x524.jpg" },
+    { id: 9, path: "c01a73903e6fb1c52daba7641191d2ad-699x524.jpg" },
+    { id: 10, path: "ee109a3b2bb2cef5b8c3efca324febc9-699x524.jpg" },
   ]);
 
   const getTaskPosition = (id) => tasks.findIndex((task) => task.id === id);
@@ -41,16 +47,14 @@ export default function App() {
   );
 
   return (
-    <div className="bg-blue-200 m-4">
-      <h1 className="text-center text-3xl p-4 bg-slate-400 text-white">
-        Playground
-      </h1>
+    <div className="flex flex-col ms-8">
+      <h1 className="text-center text-3xl p-4 text-white">Exhibition</h1>
       <DndContext
         sensors={sensors}
         onDragEnd={handleDragEnd}
         collisionDetection={closestCorners}
       >
-        <Column tasks={tasks} />
+        <DraggableArea tasks={tasks} />
       </DndContext>
     </div>
   );

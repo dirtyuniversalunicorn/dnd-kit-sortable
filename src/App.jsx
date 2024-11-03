@@ -47,7 +47,7 @@ export default function App() {
   );
 
   return (
-    <div className="flex flex-col ms-8">
+    <div className="flex flex-col ms-4 me-4">
       <h1 className="text-center text-3xl p-4 text-white">Exhibition</h1>
       <DndContext
         sensors={sensors}

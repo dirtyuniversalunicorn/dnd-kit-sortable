@@ -3,7 +3,7 @@ import { DraggableObject } from "./DraggableObject";
 
 const DraggableArea = ({ tasks }) => {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 bg-zinc-700 p-4 rounded">
       <SortableContext items={tasks} strategy={rectSortingStrategy}>
         {tasks.map((task) => (
           <DraggableObject id={task.id} path={task.path} key={task.id} />
@@ -14,5 +14,3 @@ const DraggableArea = ({ tasks }) => {
 };
 
 export default DraggableArea;
-
-//try and render images here
